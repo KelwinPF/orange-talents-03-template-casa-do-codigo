@@ -16,7 +16,6 @@ public class CategoriaDTO {
 		this.nome = nome;
 	}
 
-
 	public Categoria converter(CategoriaRepository repository) {
 		return new Categoria(nome);
 	}

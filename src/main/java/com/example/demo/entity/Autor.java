@@ -40,5 +40,8 @@ public class Autor implements Serializable{
 		this.descricao = descricao;
 	}
 	
+    public Autor() {
+    	
+    }
     
 }
