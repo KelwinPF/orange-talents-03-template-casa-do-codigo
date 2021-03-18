@@ -26,7 +26,6 @@ public class ExistsValidator implements ConstraintValidator<Exists,Long>{
 					.getResultList().isEmpty();
 		
 		}catch(Exception e) {}
-		System.out.println(exist);
 		return !exist;
 	}
 }
