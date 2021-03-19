@@ -71,6 +71,37 @@ public class Livro implements Serializable{
 	public String getTitulo() {
 		return titulo;
 	}
-	
+
+	public String getResumo() {
+		return resumo;
+	}
+
+	public String getSumario() {
+		return sumario;
+	}
+
+	public Integer getNumero_paginas() {
+		return numero_paginas;
+	}
+
+	public String getIsbn() {
+		return isbn;
+	}
+
+	public LocalDate getData() {
+		return data;
+	}
+
+	public BigDecimal getValor() {
+		return valor;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public Autor getAutor() {
+		return autor;
+	}
 	
 }

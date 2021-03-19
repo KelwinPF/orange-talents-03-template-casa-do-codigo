@@ -43,5 +43,14 @@ public class Autor implements Serializable{
     public Autor() {
     	
     }
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
     
 }
