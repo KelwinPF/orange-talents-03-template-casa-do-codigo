@@ -25,7 +25,7 @@ public class Estado implements Serializable{
 	@Column(nullable = false,unique=true)
 	private String nome;
 	@ManyToOne
-	@JoinColumn(nullable = false,name="pais_id")
+	@JoinColumn(name="pais_id")
 	private Pais pais;
 	
 	public Estado(String nome, Pais pais) {
