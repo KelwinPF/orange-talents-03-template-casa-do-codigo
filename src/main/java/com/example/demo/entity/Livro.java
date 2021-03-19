@@ -63,5 +63,14 @@ public class Livro implements Serializable{
 	public Livro() {
 		
 	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+	
 	
 }
