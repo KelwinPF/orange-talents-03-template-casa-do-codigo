@@ -24,7 +24,7 @@ public class UniqueValidator implements ConstraintValidator<Unique,String>{
 		Boolean is_empty = false;
 		try {
 			is_empty = manager.createNativeQuery(
-				    "SELECT * FROM "+table+" WHERE UPPER("+column+") LIKE '%"+value.toUpperCase()+"%'")
+				    "SELECT * FROM "+table+" WHERE UPPER("+column+") LIKE '"+ value.toUpperCase() +"' ")
 					.getResultList().isEmpty();
 		}catch(Exception e) {}
 		return is_empty;
