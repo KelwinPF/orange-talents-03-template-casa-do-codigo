@@ -18,14 +18,20 @@ public class IsCountryStateValidator implements ConstraintValidator<IsCountrySta
 
 	@Override
 	public boolean isValid(ClienteDTO dto, ConstraintValidatorContext context){
-		Boolean is_empty = true;
+		Boolean is_empty = false;
 		try {
-			is_empty = manager.createNativeQuery(
-				    " SELECT e.pais_id FROM estados as e WHERE e.id = "+ dto.getEstado().toString() +
-				    " AND e.pais_id = " + dto.getPais().toString())
-					.getResultList().isEmpty();
+			if(dto.getEstado()==null) {
+				is_empty = manager.createNativeQuery(
+					    " SELECT * FROM estados WHERE pais_id = "+ dto.getPais().toString())
+						.getResultList().isEmpty();
+			}else {
+				is_empty = !manager.createNativeQuery(
+					    " SELECT e.pais_id FROM estados as e WHERE e.id = "+ dto.getEstado().toString() +
+					    " AND e.pais_id = " + dto.getPais().toString())
+						.getResultList().isEmpty();
+			}
 		}catch(Exception e) {}
-		return !is_empty;
+		return is_empty;
 	}
 
 }
